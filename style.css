@@ -1,0 +1,152 @@
+/* --------------------- VARIABILI TEMA --------------------- */
+:root {
+  --bg-dark: #2b3a1e;          /* verde militare scuro profondo */
+  --accent: #6b8e23;           /* verde militare chiaro */
+  --accent-hover: #788c3b;     /* verde hover */
+  --border-dark: #2f4f2f;      /* bordo verde scuro */
+  --text-light: #f0f0d0;       /* testo chiaro */
+  --shadow-dark: rgba(0,0,0,0.8);
+}
+
+/* --------------------- STILE DI BASE --------------------- */
+body {
+  font-family: Arial, sans‑serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+header {
+  background-color: var(--border-dark);
+  color: var(--text-light);
+  padding: 30px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8em;
+  text-shadow: 1px 1px #000;
+}
+
+header .subtitle {
+  margin-top: 8px;
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: bold;
+  color: #d4d8c4;
+}
+
+/* --------------------- LOGO CENTRALE --------------------- */
+main {
+  padding: 50px 20px 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--border-dark);
+  box-shadow: 0 6px 12px var(--shadow-dark);
+  background-color: var(--accent);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.logo-circle:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------- GRUPPO PULSANTI --------------------- */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.rotate-btn {
+  display: inline-block;
+  padding: 14px 22px;
+  background-color: var(--accent);
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+  border: 3px solid var(--border-dark);
+  border-radius: 10px;
+  box-shadow: 0 6px 12px var(--shadow-dark);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 140px;
+  text-align: center;
+}
+
+.rotate-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.15);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.rotate-btn:hover::before {
+  left: 100%;
+}
+
+.rotate-btn:hover {
+  background-color: var(--accent-hover);
+  transform: rotate(-3deg) scale(1.05);
+  box-shadow: 0 8px 16px var(--shadow-dark);
+}
+
+/* --------------------- FOOTER --------------------- */
+footer {
+  background-color: var(--border-dark);
+  color: var(--text-light);
+  padding: 14px 0;
+  text-shadow: 1px 1px #000;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+/* --------------------- RESPONSIVE --------------------- */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+  .logo-circle {
+    width: 140px;
+    height: 140px;
+  }
+  .rotate-btn {
+    padding: 10px 16px;
+    font-size: 0.9em;
+    flex: 1 1 100%;
+  }
+}
+
+/* --------------------- UTILITÀ EXTRA --------------------- */
+/* Aggiungi qui altre classi se vuoi animazioni, transizioni, modalità scura/chiara etc. */
+
